@@ -1,0 +1,15 @@
+venv/
+.env
+.idea
+
+*.swp
+*.tmp
+*~
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+*.log
+*.xlsx
