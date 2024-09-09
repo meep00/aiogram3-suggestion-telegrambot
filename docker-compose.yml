@@ -1,0 +1,24 @@
+version: '2.29.2'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: suggestion_tgbot
+    working_dir: /usr/src/app
+    command: python bot.py
+    restart: always
+    env_file:
+     - ".env"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    container_name: postgres_db
+    restart: always
+    env_file:
+     - ".env"
+    ports:
+     - "5436:5432"
